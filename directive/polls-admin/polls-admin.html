@@ -1,12 +1,12 @@
 <div>
     <div class="ui segment">
-        <header class="ui header"><a href="javascript:void(0)" ng-click="resultsHidden = !resultsHidden">Results</a></header>
+        <header class="ui teal header click" ng-click="resultsHidden = !resultsHidden">Results</header>
         <div ng-hide="resultsHidden">
             <poll-results ng-repeat="poll in polls" poll="poll"></poll-results>
         </div>
     </div>
     <div class="ui segment">
-        <header class="ui header"><a href="javascript:void(0)" ng-click="pollsHidden = !pollsHidden">Poll Admin</a></header>
+        <header class="ui teal header click" ng-click="pollsHidden = !pollsHidden">Poll Admin</header>
         <div ng-hide="pollsHidden">
             <div class="ui segment">
                 <div class="item">

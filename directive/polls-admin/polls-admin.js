@@ -7,6 +7,7 @@ angular.module('polls').directive('pollsAdmin', function(pollService) {
 		},
 		templateUrl: 'directive/polls-admin/polls-admin.html',
 		link: function(scope, element, attrs, fn) {
+            scope.polls = pollService.getPolls();
             scope.$on('polls', function(s, polls){
                 scope.polls = polls;
             });

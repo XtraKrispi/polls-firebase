@@ -94,7 +94,7 @@ module.exports = function (grunt) {
       main: {
         files: [
           {src: ['img/**'], dest: 'dist/'},
-          {src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}
+          {cwd: 'bower_components/semantic-ui/build/packaged/fonts/', src: ['**'], dest: 'dist/fonts/',filter:'isFile', expand: true}
           //{src: ['bower_components/angular-ui-utils/ui-utils-ieshiv.min.js'], dest: 'dist/'},
           //{src: ['bower_components/select2/*.png','bower_components/select2/*.gif'], dest:'dist/css/',flatten:true,expand:true},
           //{src: ['bower_components/angular-mocks/angular-mocks.js'], dest: 'dist/'}
@@ -116,7 +116,7 @@ module.exports = function (grunt) {
           remove: ['script[data-remove!="exclude"]','link'],
           append: [
             {selector:'body',html:'<script src="app.full.min.js"></script>'},
-            {selector:'head',html:'<link rel="stylesheet" href="app.full.min.css">'}
+            {selector:'head',html:'<link rel="stylesheet" href="css/app.full.min.css">'}
           ]
         },
         src:'index.html',
@@ -126,7 +126,7 @@ module.exports = function (grunt) {
     cssmin: {
       main: {
         src:['temp/app.css','<%= dom_munger.data.appcss %>'],
-        dest:'dist/app.full.min.css'
+        dest:'dist/css/app.full.min.css'
       }
     },
     concat: {

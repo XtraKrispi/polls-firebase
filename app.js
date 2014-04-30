@@ -1,4 +1,4 @@
-angular.module('polls', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate']);
+angular.module('polls', ['ui.utils','ngRoute','ngAnimate']);
 
 angular.module('polls').config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(false);
