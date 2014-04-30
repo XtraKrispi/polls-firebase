@@ -1,0 +1,28 @@
+<div>
+    <div class="ui segment">
+        <header class="ui header"><a href="javascript:void(0)" ng-click="resultsHidden = !resultsHidden">Results</a></header>
+        <div ng-hide="resultsHidden">
+            <poll-results ng-repeat="poll in polls" poll="poll"></poll-results>
+        </div>
+    </div>
+    <div class="ui segment">
+        <header class="ui header"><a href="javascript:void(0)" ng-click="pollsHidden = !pollsHidden">Poll Admin</a></header>
+        <div ng-hide="pollsHidden">
+            <div class="ui segment">
+                <div class="item">
+                    <div class="content">
+                        <poll-edit poll="newPoll" on-saved="newPollSaved()"></poll-edit>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="poll in polls" class="ui segment">
+                <div class="item">
+                    <div class="content">
+                        <poll-edit poll="poll"></poll-edit>
+                    </div>
+                </div>
+            </div>
+            <debug-data data="polls"></debug-data>
+        </div>
+    </div>
+</div>

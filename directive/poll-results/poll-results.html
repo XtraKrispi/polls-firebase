@@ -1,0 +1,11 @@
+<div>
+    <div class="ui segment">
+        <div class="ui header">{{poll.pollText}}</div>
+        <div class="ui grid left-gutter">
+            <div class="row" ng-repeat="answer in poll.answers">
+                <div class="column">{{answer.text}}</div>
+                <div class="column">{{answerPercentage(answer)}}%</div>
+            </div>
+        </div>
+    </div>
+</div>

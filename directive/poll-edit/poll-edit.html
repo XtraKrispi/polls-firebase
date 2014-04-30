@@ -1,0 +1,14 @@
+<div>
+    <div class="ui form">
+        <div class="field">
+            <label>Question</label>
+            <input type="text" placeholder="New question..." ng-model="editingPoll.pollText" />
+        </div>
+        <div class="field">
+            <label>Answers</label>
+            <poll-answers-edit answers="editingPoll.answers"></poll-answers-edit>
+        </div>
+        <save-poll-button poll="editingPoll" on-saved="pollSaved()"></save-poll-button>
+    </div>
+    <debug-data data='editingPoll'></debug-data>
+</div>

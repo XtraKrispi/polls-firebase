@@ -1,0 +1,19 @@
+<div>
+	<header class="ui header">{{poll.pollText}}</header>
+	<div class="ui list">
+		<div class="ui form">
+			<div class="grouped inline fields">
+				<div ng-repeat="answer in poll.answers" class="field">
+					<div class="ui radio checkbox">
+						<input type="radio" ng-attr-name="pollAnswers{{poll.pollId}}" ng-attr-id="pollAnswers{{poll.pollId}}Answer{{$index}}" ng-model="$parent.answerIndex" ng-value="$index"/>
+						<label for="pollAnswers{{poll.pollId}}Answer{{$index}}">{{answer.text}}</label>
+					</div>
+				</div>
+				<div class="field">
+					<save-poll-result-button poll="poll" answer="answerIndex">Save</save-poll-result-button>
+				</div>
+			</div>
+		</div>
+	</div>
+    <debug-data data="poll"></debug-data>
+</div>

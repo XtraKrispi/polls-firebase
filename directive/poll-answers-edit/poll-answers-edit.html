@@ -1,0 +1,16 @@
+<div class="ui form">
+    <div ng-repeat="answer in answers" class="inline fields">
+        <div class="field">
+            <input type="text" ng-model="answer.text" />
+        </div>
+        <div class="field">
+            <button class="ui button" ng-click="removeAnswer(answer)">
+                <i class="ui trash icon"></i>
+            </button>
+        </div>
+    </div>
+    <div class="field">
+        <input type="text" placeholder="New answer..." ng-model="newAnswer"/>
+        <button class="ui button small" ng-click="addAnswer()">Add Answer</button>
+    </div>
+</div>

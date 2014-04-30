@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="polls">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  <link href="bower_components/semantic-ui/build/packaged/css/semantic.css" type="text/css" rel="stylesheet">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+</head>
+<body>
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-build="exclude"></script>
+  <script src="node_modules/grunt-browser-output/client.js" data-build="exclude"></script>
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less-1.6.2.js" data-build="exclude"></script>
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="bower_components/semantic-ui/build/packaged/javascript/semantic.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <!-- Add New Bower Component JS Above -->
+
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="partial/poll/poll.js"></script>
+  <script src="partial/admin/admin.js"></script>
+  <script src="service/pollService.js"></script>
+  <script src="directive/polls-list/polls-list.js"></script>
+  <script src="directive/poll-view/poll-view.js"></script>
+  <script src="directive/save-poll-result-button/save-poll-result-button.js"></script>
+  <script src="directive/debug-data/debug-data.js"></script>
+  <script src="directive/polls-admin/polls-admin.js"></script>
+  <script src="directive/poll-edit/poll-edit.js"></script>
+  <script src="directive/save-poll-button/save-poll-button.js"></script>
+  <script src="directive/poll-answers-edit/poll-answers-edit.js"></script>
+  <script src="directive/poll-results/poll-results.js"></script>
+  <script src="directive/debug-toggle/debug-toggle.js"></script>
+  <!-- Add New Component JS Above -->
+
+  <div class="ui one column page grid">
+        <div ng-view class="column">
+        </div>
+  </div>
+
+</body>
+</html>
