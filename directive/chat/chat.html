@@ -1,4 +1,7 @@
 <div class="ui segment">
-    <chat-list></chat-list>
-    <chat-message-entry></chat-message-entry>
+    <div class="ui teal header click" ng-click="hidden = !hidden">Chat</div>
+    <div ng-hide="hidden">
+        <chat-list></chat-list>
+        <chat-message-entry></chat-message-entry>
+    </div>
 </div>

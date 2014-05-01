@@ -1,6 +1,6 @@
 <div>
-	<header class="ui header">{{poll.pollText}}</header>
-	<div class="ui list">
+	<header class="ui teal header click" ng-click="hidden = !hidden">{{poll.pollText}}</header>
+	<div class="ui list" ng-hide="hidden">
 		<div class="ui form">
 			<div class="grouped inline fields">
 				<div ng-repeat="answer in poll.answers" class="field">

@@ -47,19 +47,11 @@
   <script src="directive/chat/chat.js"></script>
   <script src="directive/chat-list/chat-list.js"></script>
   <script src="directive/chat-message-entry/chat-message-entry.js"></script>
+  <script src="directive/main-menu/main-menu.js"></script>
   <!-- Add New Component JS Above -->
-  <div class="ui fixed transparent inverted main menu">
-    <div class="item">
-      jQuery Polls App
-  </div>
-  <a class="item" href="#/poll">
-      Polls
-  </a>
-  <a class="item" href="#/admin">
-      Admin
-  </a>
-</div>
-<div class="ui page grid">
+
+  <main-menu></main-menu>
+  <div class="ui stackable page grid">
     <div class="five wide column">
       <chat></chat>
   </div>

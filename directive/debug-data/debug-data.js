@@ -1,4 +1,4 @@
-angular.module('polls').directive('debugData', function($rootScope) {
+angular.module('polls').directive('debugData', function(configService) {
 	return {
 		restrict: 'E',
 		replace: true,
@@ -7,8 +7,11 @@ angular.module('polls').directive('debugData', function($rootScope) {
 		},
 		templateUrl: 'directive/debug-data/debug-data.html',
 		link: function(scope, element, attrs, fn) {
-            scope.$watch(function() { return $rootScope.debug; }, function(val){
-                scope.debug = val;
+            scope.debug = configService.getConfigValue('debug');
+            scope.$on('config', function(s, config){
+                if (config && angular.isDefined(config.debug)){
+                    scope.debug = config.debug;
+                }
             });
 		}
 	};

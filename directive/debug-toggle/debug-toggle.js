@@ -1,4 +1,4 @@
-angular.module('polls').directive('debugToggle', function($rootScope, configService) {
+angular.module('polls').directive('debugToggle', function(configService) {
 	return {
 		restrict: 'E',
 		replace: true,
@@ -7,15 +7,16 @@ angular.module('polls').directive('debugToggle', function($rootScope, configServ
 		},
 		templateUrl: 'directive/debug-toggle/debug-toggle.html',
 		link: function(scope, element, attrs, fn) {
-      scope.debug = $rootScope.debug;
+            scope.debug = configService.getConfigValue('debug');
+            scope.$on('config', function(s, config){
+                if (config && angular.isDefined(config.debug)){
+                    scope.debug = config.debug;
+                }
+            });
 
-      scope.$watch(function() { return $rootScope.debug; }, function(val){
-        scope.debug = val;
-      });
-
-      scope.debugChanged = function(){
-        configService.setDebugMode(scope.debug);
-      };
-    }
-  };
+            scope.debugChanged = function(){
+                configService.setDebugMode(scope.debug);
+            };
+        }
+    };
 });
