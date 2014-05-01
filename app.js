@@ -9,7 +9,7 @@ angular.module('polls').config(function($routeProvider, $locationProvider) {
     $routeProvider.otherwise({redirectTo:'/poll'});
 });
 
-angular.module('polls').run(function($rootScope) {
+angular.module('polls').run(function($rootScope, configService, $log) {
 
     $rootScope.safeApply = function(fn) {
         var phase = $rootScope.$$phase;
@@ -22,5 +22,14 @@ angular.module('polls').run(function($rootScope) {
         }
     };
 
-    $rootScope.debug = false;
+    $rootScope.debug = configService.getConfigValue('debug');
+
+    $rootScope.$on('config', function(s, config){
+        $log.log("Config found", config);
+        if (config && angular.isDefined(config.debug)){
+            $rootScope.debug = config.debug;
+        }
+    });
+
+    $rootScope.appName = "jQuery Polls App";
 });

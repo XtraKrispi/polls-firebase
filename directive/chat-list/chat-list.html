@@ -1,0 +1,17 @@
+<div class="ui teal segment chat-segment">
+    <div class="ui medium list">
+        <div class="item" ng-repeat="message in messages | orderBy:'date':true">
+            <div class="header">
+                {{message.from}}<br>{{message.date | date:'medium'}}
+            </div>
+            <div class="content">
+               {{message.message}}
+           </div>
+       </div>
+       <div class="item" ng-show="!messages || messages.count == 0">
+        <div class="content">
+            No messages...
+        </div>
+    </div>
+</div>
+</div>

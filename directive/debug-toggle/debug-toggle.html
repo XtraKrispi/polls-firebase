@@ -2,7 +2,7 @@
     <h3 class="ui teal header">Debug Mode</h3>
     <div ng-hide="hidden">
         <label>
-            <input type="checkbox" ng-model="debug" />
+            <input type="checkbox" ng-model="debug" ng-change="debugChanged()" />
             Debug?
         </label>
     </div>

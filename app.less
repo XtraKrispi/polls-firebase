@@ -7,9 +7,29 @@
     user-select: none;
 }
 
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+
+    -moz-background-clip:    padding;
+    -webkit-background-clip: padding-box;
+    background-clip:         padding-box;
+}
+
 html {
-    font-size: 70%;
+    font-size: 14px;
     font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+  margin:0;
+}
+
+pre {
+    .border-radius;
+    background-color:#eee;
+    padding:20px;
 }
 
 /* Component LESS */
@@ -25,4 +45,7 @@ html {
 @import "directive/poll-answers-edit/poll-answers-edit.less";
 @import "directive/poll-results/poll-results.less";
 @import "directive/debug-toggle/debug-toggle.less";
+@import "directive/chat/chat.less";
+@import "directive/chat-list/chat-list.less";
+@import "directive/chat-message-entry/chat-message-entry.less";
 /* Add Component LESS Above */

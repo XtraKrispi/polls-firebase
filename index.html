@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="polls">
 <head>
-  <title></title>
+  <title>{{appName}} - {{pageTitle}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <link href="bower_components/semantic-ui/build/packaged/css/semantic.css" type="text/css" rel="stylesheet">
   <link href="app.less" type="text/css" rel="stylesheet/less">
 </head>
@@ -42,12 +42,30 @@
   <script src="directive/poll-answers-edit/poll-answers-edit.js"></script>
   <script src="directive/poll-results/poll-results.js"></script>
   <script src="directive/debug-toggle/debug-toggle.js"></script>
+  <script src="service/configService.js"></script>
+  <script src="service/chatService.js"></script>
+  <script src="directive/chat/chat.js"></script>
+  <script src="directive/chat-list/chat-list.js"></script>
+  <script src="directive/chat-message-entry/chat-message-entry.js"></script>
   <!-- Add New Component JS Above -->
-
-  <div class="ui one column page grid">
-        <div ng-view class="column">
-        </div>
+  <div class="ui fixed transparent inverted main menu">
+    <div class="item">
+      jQuery Polls App
   </div>
+  <a class="item" href="#/poll">
+      Polls
+  </a>
+  <a class="item" href="#/admin">
+      Admin
+  </a>
+</div>
+<div class="ui page grid">
+    <div class="five wide column">
+      <chat></chat>
+  </div>
+  <div ng-view class="eleven wide column">
+  </div>
+</div>
 
 </body>
 </html>
